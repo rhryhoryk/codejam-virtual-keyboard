@@ -3,3 +3,46 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  padding: 20px;
+}
+
+form {
+  width: 90%;
+  margin: 15px auto;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+
+  border: 3px solid #fff48f;
+  outline: #810d17;
+  resize: none;
+  font-size: 2rem;
+
+  color: grey;
+  background-color: #fdfada;
+}
+
+.keyboard {
+  display: grid;
+  grid-template: repeat(5, 50px) / repeat(15, 1fr);
+  grid-gap: 5% 1%;
+  width: 90%;
+  height: 320px;
+  margin: 0 auto;
+}
+
+.button {
+  width: 100%;
+  height: 100%;
+  background-color: #fff48f;
+  outline: #810d17;
+} 
+
+.--pressed {
+  background-color: #eb404e;
+  border-radius: 15px;
+}
