@@ -46,3 +46,20 @@ textarea {
   background-color: #eb404e;
   border-radius: 15px;
 }
+
+.--double {
+  grid-column: span 2;
+}
+
+.--enter {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.--shift {
+  grid-column: span 3;
+}
+
+.--space {
+  grid-column: span 9;
+}
