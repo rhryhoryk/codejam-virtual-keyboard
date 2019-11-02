@@ -1,0 +1,23 @@
+{
+  "name": "codejam-virtual-keyboard",
+  "version": "1.0.0",
+  "description": "codejam-virtual-keyboard for Rolling Scopes School",
+  "main": "script.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rhryhoryk/codejam-virtual-keyboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "6.3.0",
+    "eslint-config-htmlacademy": "0.5.2"
+  },
+  "dependencies": {},
+  "scripts": {
+    "test": "eslint js/"
+  },
+  "engines": {
+    "node": "8.11"
+  }
+}
