@@ -46,9 +46,11 @@
   // ---------------------------------------- button pressing -----------------------------------------------
 
   var buttons = keyboard.querySelectorAll('button');
+  var pressedButtonsCodes = [];
 
   document.addEventListener('keydown', function (evt) {
     var pressedButtonKeyCode = evt.keyCode;
+    pressedButtonsCodes.push(pressedButtonKeyCode);
 
     for (var k = 0; k < buttons.length; k++) {
       if (Number(buttons[k].classList[1]) === pressedButtonKeyCode) {
@@ -56,8 +58,21 @@
       }
     }
     pressedButton.classList.add('--pressed');
+
+    if (pressedButtonsCodes.includes(16) && pressedButtonsCodes.includes(18)) {
+      if (buttons[0].innerHTML === 'esc') {
+        for (var bt = 0; bt < buttons.length; bt++) {
+          buttons[bt].innerHTML = window.keysBD.keys[bt][2];
+        }
+      } else {
+        for (var bb = 0; bb < buttons.length; bb++) {
+          buttons[bb].innerHTML = window.keysBD.keys[bb][1];
+        }
+      }
+    }
     var onbuttonUP = function () {
       pressedButton.classList.remove('--pressed');
+      pressedButtonsCodes = [];
     };
     document.addEventListener('keyup', onbuttonUP);
   });
