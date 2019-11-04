@@ -44,7 +44,6 @@
   });
 
   // ---------------------------------------- button pressing -----------------------------------------------
-
   var buttons = keyboard.querySelectorAll('button');
   var pressedButtonsCodes = [];
 
@@ -57,6 +56,7 @@
         var pressedButton = buttons[k];
       }
     }
+
     pressedButton.classList.add('--pressed');
 
     if (pressedButtonsCodes.includes(16) && pressedButtonsCodes.includes(18)) {
@@ -70,11 +70,37 @@
         }
       }
     }
+
     var onbuttonUP = function () {
       pressedButton.classList.remove('--pressed');
       pressedButtonsCodes = [];
     };
+
     document.addEventListener('keyup', onbuttonUP);
   });
+
+  // --------------------------------------------------button clicking ---------------------------------------------
+  var text = [];
+  for (var h = 0; h < buttons.length; h++) {
+    (function (clickedButton) {
+      clickedButton.addEventListener('click', function () {
+
+        if (clickedButton.classList[1] === '32') {
+          text.push(' ');
+        } else if (clickedButton.classList[1] === '13') {
+          text.push('\n');
+        } else if (clickedButton.classList[1] === '9') {
+          text.push('\t');
+        } else if (clickedButton.classList[1] === '8') {
+          text.pop();
+        } else if (clickedButton.classList[1] === '46') {
+          text.splice(0, text.length);
+        } else {
+          text.push(clickedButton.innerText);
+        }
+        textarea.textContent = text.join('');
+      });
+    })(buttons[h]);
+  }
 
 })();
